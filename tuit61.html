@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TUIT LX</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+// TASK 1-------------------------------------------------
+ $("#show").hide()
+ $("#img1").click(function(){
+  $(this).hide()
+  $("#show").show();
+ })
+ $("#show").click(function(){
+  $("img").show()
+  $(this).hide();
+ })
+ //-------------------------------------------------------
+ //TASK 2-------------------------------------------------------
+ $("#para1").css({"font-family":"Audiowide, cursive","font-size":"200%"})
+ $("#para2").css({"font-family":"Open Sans, sans-serif","font-size":"200%"})
+ $("#para3").css({"font-family":"Noto San, monospace","font-size":"200%"})
+ 
+ //TASK 3---------------------------------------------------
+ $("#hide3").hide()
+ $("#img3").hide()
+ $("#hide3").click(function(){
+  $("#img3").hide(1200)
+  $("#show3").show(700)
+  $("#hide3").hide(700)
+ })
+ $("#show3").click(function(){
+  $("#img3").show(1200)
+  $("#hide3").show(700)
+  $("#show3").hide(700)
+ })
+ //------------------------------------------------------------
+ //TASK 4-------------------------------------------------------
+  $(".eye").click(function(){
+   $(".eye").css({
+    filter: "invert(100%)"
+   })
+  })
+  $(".eye").dblclick(function(){
+    $(".eye").css({
+    filter:"none"
+   })
+  })
+  //.animate({transfrom:scale()})
+ //-----------------------------------------------------------
+})
+
+function changesrc(img, src){
+ img.src = src;
+ let para = document.getElementById("ts4para1").innerText="Stay happy with your nature and technology"
+}
+</script>
+</head>
+<body>
+
+<h3 id="ts1">TASK 1</h3></hr />
+<p>click the image the hide.</p>
+<div class="imghide">
+<img id="img1" src="https://cdn.pixabay.com/photo/2022/05/29/05/31/raccoon-7228457_960_720.jpg" width="300"  />
+<button id="show" class="btn btn-sty">SHOW</button>
+</div>
+
+<h3 id="ts2">TASK 2</h3></hr />
+
+<p id="para1">Almost before we knew it, we had left the ground.</p>
+<p id="para2">Almost before we knew it, we had left the ground.</p>
+<p id="para3">Almost before we knew it, we had left the ground.</p>
+
+
+<h3 id="ts3">TASK 3</h3></hr />
+
+<img id="img3" src="https://cdn.pixabay.com/photo/2022/05/08/04/26/hummingbird-7181235_960_720.jpg"  width="300" />
+<button id="show3" class="btn btn-green btn-sty">SHOW</button>
+<button id="hide3" class="btn btn-sty">HIDE</button>
+
+<h3 id="ts3">TASK 3</h3></hr />
+<p>Click /double click</p>
+<div class="div-center">
+<img class="eye" id="left" style="margin:20px;" src="https://cdn.pixabay.com/photo/2020/04/03/07/26/eye-4997724_960_720.png" height="200" />
+<img class="eye" id="right" style="transform:rotateY(180deg);margin:20px;" src="https://cdn.pixabay.com/photo/2020/04/03/07/26/eye-4997724_960_720.png" height="200" />
+
+</div>
+
+
+<h3 id="ts4">TASK 4</h3></hr />
+<div class="ts4img">
+<img height="400" onmouseover="changesrc(this,'https://cdn.pixabay.com/photo/2016/05/05/02/32/hot-air-balloons-1373161_960_720.jpg')" src="https://cdn.pixabay.com/photo/2019/10/06/06/56/nuclear-power-plant-4529392_960_720.jpg" onmouseleave="changesrc(this,'https://cdn.pixabay.com/photo/2019/10/06/06/56/nuclear-power-plant-4529392_960_720.jpg')"/>
+</div>
+<img class="none" heigth="400" src="https://cdn.pixabay.com/photo/2016/05/05/02/32/hot-air-balloons-1373161_960_720.jpg" />
+<p class"ts4para1" id="ts4para1">he introduction of harmful gases, toxic elements, allergens etc. in the air is responsible for Air Pollution. Air pollution highly affects the quality of air, making it dangerous for human survival. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+#show{
+ margin:4em 6em;
+}
+img,#show{transition:1s}
+.btn{
+ border:none;
+ padding: 1.2em 1.6em;
+ text-align: center;
+}
+button.btn-sty{
+ display:block;
+ background-color:#3F51B5;
+ color:#fff;
+ letter-spacing:.25ch;
+ border:1px solid #0000;
+ border-radius: 4px;
+}
+
+button.btn-green{
+ background-color:#4CAF50;
+}
+.div-center{
+ width:50%;
+ margin:0 auto;
+}
+.none{
+display:none;
+}
+.ts4para1{
+ width:300px;
+}
+.ts4img{
+ float:left;
+}
+
+</style>
+</body>
+</html>

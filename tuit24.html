@@ -1,0 +1,175 @@
+<!DOCtYPE html>
+<html>
+<head>
+<style>
+.target{
+ margin:2.3em;
+}
+.target:hover{
+ transition:1.5s ease-out;
+ animation: 1.5s linear infinite threesix;
+ }
+ img.target_active{
+ animation: 1s linear 1 movement;
+  
+ }
+@keyframes movement {
+25%{
+ transform:translate(150%,0);
+}
+50%{
+transform:translate(150%,150%)
+}
+75%{
+transform:translate(0,150%);
+}
+100%{
+ transform:translate(0,0);
+}
+}
+@keyframes threesix {
+ from{
+  transform:rotate(0deg);
+ }
+ to{
+  transform:rotate(360deg);
+ }
+}
+#ts2.img:hover{
+transition:3s;
+transform:scaleY(2) scaleX(4) translateX(50%) translateY(-50%);
+}
+
+.rel {
+ position:relative;
+ width:350px;
+ border:1px solid #000;
+}
+.abs{
+ position:absolute;
+ top:50%;
+ left:0%;
+ background:#000;
+ color:red;
+ padding:3em 3.5em;
+ opacity:0;
+ transition:1.5s;
+ z-index:1;
+}
+div.rel:hover .abs{
+ opacity:1;
+}
+.btn{
+ border:none;
+ padding:1em 2.2em;
+ text-align:center;
+}
+.btn-sty{
+    background-image: linear-gradient(to right, #2196F3 50%, #9C27B0 50%);
+    background-size: 200%;
+    background-position:left;
+    color:#fff;
+    font-weight:700;
+    margin:1rem 3em;
+    outline:2px solid #2196F3;
+    outline-offset: 4px;
+    transition: all .5s;
+ }
+ .btn-sty:hover,.btn-sty:active{
+  background-position:right;
+  outline-color:  #9C27B0;
+ }
+.skew{
+ width: 200px;
+ background: orange;
+ height: 100px;
+ padding: .5em;
+ margin: 1.8em;
+}
+.skewl{
+  transform: skewY(-15deg);
+}
+.skewr{
+ transform: skewY(15deg);
+}
+.rotatex{
+ transform: rotateX(-150deg)
+}
+footer {
+ padding: .3em 2em;
+ background: #eee;
+ margin: 0;
+ border:2px solid #000;
+ border-bottom: 1px solid #777; 
+}
+</style>
+</head>
+<body>
+<h3>Task 1</h3><hr />
+<p>Click me</p>
+<img id="img" src="https://cdn.pixabay.com/photo/2020/10/26/17/27/kid-5687952_960_720.jpg" width="200" height="200" />
+
+<h3>Task 2</h3><hr />
+<p>mouse me</p>
+<img class="img" id="ts2" src="https://cdn.pixabay.com/photo/2022/02/21/07/12/woman-7025944_960_720.jpg" height="250" width=300 />
+
+
+<h3>Task 3</h3><hr />
+<p>mouse me</p>
+<div class="rel">
+<img id="ts3" class="img" src="https://cdn.pixabay.com/photo/2020/10/18/20/43/dinosaur-5666127_960_720.png" height=300 width="350"/>
+<p class="abs">this is dino</p>
+</div>
+<h3>Task 4</h3><hr />
+<button class="btn btn-sty">HOVER ME>></button>
+
+
+<h3>task 5 </h3> <hr />
+<div class="skew skewl">
+kong is enemy of godzila.
+</div>
+but
+
+<div class="skew skewr">
+godzila is the king for all the tittans
+</div>
+
+<div class="skew rotatex">
+By godzilla killed king gidorah.
+</div>
+
+<h3>Task 6 </h3> <hr />
+<TABLE border=1>
+<TR><TH>Name</TH><TH>Login ID</TH><TH>Course Name</TH><TH>Marks</TH></TR>
+<TR><TD>Steve</TD><TD>1234</TD><TD>MySQL 5 Developer Certified Professional Exam, Part I</TD><TD>92</TD></TR>
+<TR><TD>John</TD><TD>1235</TD><TD>MySQL 5 Developer Certified Professional Exam, Part II</TD><TD>85</TD></TR>
+<TR><TD>Joseph</TD><TD>01236</TD><TD>MySQL 5 Database Administrator Certified Professional Exam, Part I</TD><TD>98</TD></TR>
+<TR><TD>Michel</TD><TD>01237</TD><TD>	MySQL 5 Database Administrator Certified Professional Exam, Part II</TD><TD>25</TD></TR>
+</TBODY>
+
+<h3>Task 7 </h3> <hr />
+<footer>
+<a href="mailto:example@gmail.com">Mail to me</a>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+ var img = document.getElementById("img");
+ img.addEventListener("click",function(){
+  this.classList.add("target_active")
+  setTimeout(function(){
+   img.classList.remove("target_active")
+  },3000)
+ })
+</script>
+</body>
+</html>

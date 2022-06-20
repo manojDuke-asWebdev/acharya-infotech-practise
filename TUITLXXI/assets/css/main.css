@@ -1,0 +1,31 @@
+input[type=file]::file-selector-button{
+ display:block;
+ height: 400px;
+ width: 2300px;
+ opacity:0;
+ z-index:2;
+ cursor:pointer;
+}
+.file-input{
+ height:500px;
+ position:relative;
+}
+.output-image,input[type=file]::file-selector-button {
+ position:absolute;
+ top:0;
+ left:0;
+}
+
+.img-filter {
+ height:250px;
+ width:150px;
+ margin: 15px 10px;
+}
+.file-input{
+ width:240px;
+ height:400px;
+ margin:0 auto;
+}
+.input-output-wrapper{
+
+}

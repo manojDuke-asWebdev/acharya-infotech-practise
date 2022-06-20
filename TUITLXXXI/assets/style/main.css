@@ -1,0 +1,74 @@
+:root{
+ --bgImg:url(
+ "https://cdn.pixabay.com/photo/2017/09/11/15/58/sunset-2739472_960_720.jpg"
+);	
+--logoImg:url(
+"../img/logoI.png"
+);
+}
+body{
+ background-image:var(--bgImg);
+ background-size:130%;
+}
+
+.container{
+ position:relative;
+}
+.main{
+ height:500px;
+ width:600px;
+ background:#eee;
+ position:relative;
+ top:50%;
+ left:50%;
+ transform:translate(-50%);
+ margin:30px;
+}
+.sec-main{
+ background:#fff;
+ margin: .5em auto;
+ width:80%;
+ height: 65%;
+}
+img#logo{
+  content:var(--logoImg);
+  height;100px;
+  width:100px;
+}
+.input{
+ display:flex;
+ flex-direction: row;
+ justify-content: center;
+}
+.date{
+ font-size:1.5rem;
+ padding:.5em .5em;
+ background: #E0E0E0;
+ margin:.5em;
+}
+
+.btn{
+ padding:1.2em 1.5em;
+ border:none;
+ text-transfer:uppercase;
+ }
+ 
+ .btn-style{
+  border-radius:4px;
+  background:green;
+  color:#fff;
+ }
+ .center{
+  display:block;
+  margin:0.5em auto;
+ }
+ .traBg{
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  -webkit-font-smoothing: antialiased;
+ }
+ .width-50{width:50%}
+.res{
+text-align:center;
+
+}

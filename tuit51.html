@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.ts6.img{
+ transform: transformZ(180deg)
+}
+</style>
+
+
+<title>TUIT L</title>
+</head>
+<body>
+<nav style="position:fixed;top:0;background:#fff;">
+<a href="#ts1">TASK 1 |</a>
+<a href="#ts2">TASK 2 |</a>
+<a href="#ts3">TASK 3 |</a>
+<a href="#ts4">TASK 4 |</a>
+<a href="#ts5">TASK 5 |</a>
+<a href="#ts6">TASK 6 |</a>
+<a href="#ts7">TASK 7 |</a>
+<a href="#ts8">TASK 8 |</a>
+</nav>
+<h3 id="ts1">TASK 1 </h3><hr />
+<h5> basic canvas</h5>
+<canvas id="canvas1" height="200" width="200" style="border:2px solid lightgreen"></canvas>
+
+
+<h3 id="ts2">TASK 2 </h3><hr />
+
+<h5>Line stroke</h5>
+<div style="margin:0 auto">
+<canvas id="canvas2" height="200" width="200" style="border:2px solid lightgreen;"></canvas>
+</div>
+
+<h3 id="ts3">TASK 3 </h3><hr />
+<h5>Arc draw</h5>
+<canvas id="canvas3" height="200" width="200" style="border:2px solid lightgreen;"></canvas>
+
+
+<h3 id="ts4">TASK 4 </h3><hr />
+<h5>Text display</h5>
+<canvas id="canvas4" height="200" width="400" style="border:2px solid lightgreen;"></canvas>
+
+
+<h3 id="ts5">TASK 5 </h3><hr />
+<h5>Linear gradient</h5>
+<canvas id="canvas5" height="200" width="400" style="border:2px solid lightgreen;"></canvas>
+
+<h3 id="ts6">TASK 6 </h3><hr />
+<h5>Linear image</h5>
+<img class="ts6 img" id="img" height="400" width="600" onclick="imgcan()" src="https://cdn.pixabay.com/photo/2021/11/09/10/36/boy-6781192_960_720.jpg">
+<canvas id="canvas61" height="400" width="600" ></canvas>
+<canvas id="canvas62" height="400" width="600" ></canvas>
+<canvas id="canvas63" height="400" width="600" ></canvas>
+<canvas id="canvas65" height="400" width="600" ></canvas>
+<canvas id="canvas64" height="400" width="600" ></canvas>
+
+<h3 id="ts7">TASK 7 </h3><hr />
+<h5>rect vs filrect</h5>
+<canvas id="canvas7" height="400" width="700" style="border:2px solid lightgreen;"></canvas>
+
+<h3 id="ts8">TASK 8 </h3><hr />
+<h5>Ball</h5>
+<canvas id="canvas8" height="400" width="700" style="border:2px solid lightgreen;"></canvas>
+
+
+
+
+
+
+
+
+
+
+<script>
+//task 2------------------------------------------------------
+ let can = document.getElementById("canvas2");
+ let ctx= can.getContext("2d");
+ ctx.moveTo(105,50);
+ ctx.lineTo(100,100);
+ ctx.lineTo(40,150);
+ ctx.lineTo(100,100);
+ ctx.lineTo(180,120);
+ ctx.lineTo(100,100);
+ ctx.lineTo(80,94);
+ ctx.stroke();
+//---------------------------------------------------------------
+
+//TASK 3-------------------------------------------------------
+
+ let can2 = document.getElementById("canvas3");
+let ctx2= can2.getContext('2d')
+ctx2.beginPath();
+ctx2.arc(100,100,50,0,2*Math.PI)
+ctx2.arc(160,100,50,180,2.7*Math.PI)
+ctx2.stroke();
+
+//-----------------------------------------------------------------
+
+//TASK 4-----------------------------------------------------------
+
+let can3 = document.getElementById("canvas4");
+let ctx3 = can3.getContext("2d")
+ctx3.font="50px arial"
+ctx3.strokeText("Hello World",70,70);
+
+
+//TASK 5 ----------------------------------------------------------------
+let can5 = document.getElementById("canvas5");
+let ctx5 = can5.getContext("2d")
+let grd = ctx5.createLinearGradient(10,10, 10, 190)
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"blue");
+ctx5.fillStyle = grd
+ctx5.fillRect(20,20,200,190);
+ctx5.beginPath();
+grd=ctx5.createLinearGradient(0,0,200,200);
+grd.addColorStop(0,"yellow");
+grd.addColorStop(0.5,"green");
+grd.addColorStop(1,"orange");
+ctx5.fillStyle = grd
+ctx5.fillRect(200,0,200,200)
+
+//------------------------------------------------------------------------
+
+//TASK 6------------------------------------------------------------------
+function imgcan(){
+let can6 = document.getElementById("canvas61")
+let ctx6 = can6.getContext("2d")
+ctx6.filter="grayscale(100%)"
+let img = document.getElementById("img");
+ctx6.drawImage(img,0,0,600,400);
+
+ can6 = document.getElementById("canvas62")
+ ctx6 = can6.getContext("2d")
+ctx6.filter="brightness(1)"
+ img = document.getElementById("img");
+ctx6.drawImage(img,0,0,600,400);
+
+ can6 = document.getElementById("canvas63")
+ ctx6 = can6.getContext("2d")
+ctx6.filter="blur(5px)"
+ img = document.getElementById("img");
+ctx6.drawImage(img,0,0,600,400);
+
+ can6 = document.getElementById("canvas64")
+ ctx6 = can6.getContext("2d")
+ctx6.filter="invert(100%)"
+ img = document.getElementById("img");
+ctx6.drawImage(img,0,0,600,400);
+ can6 = document.getElementById("canvas62")
+ 
+ can6 = document.getElementById("canvas65")
+ ctx6 = can6.getContext("2d")
+ctx6.filter="contrast(.5)"
+ img = document.getElementById("img");
+ctx6.drawImage(img,0,0,600,400);
+}
+//-----------------------------------------------------------------------------
+
+//TASK 7----------------------------------------------------------------------
+let can7 = document.getElementById("canvas7");
+let ctx7 = can7.getContext("2d");
+ctx7.rect(50,50,200,200);
+ctx7.stroke()
+
+ctx7.fillStyle="orange"
+ctx7.fillRect(300,120,700,300)
+//----------------------------------------------------------------------------
+
+//TASK 8---------------------------------------------------------------------
+let x = 200, y = 400, tx = 2, ty = 4, ctx8="", can8="", height=400,width=700;
+ function ball(){
+  ctx8.beginPath();
+  ctx8.fillStyle="lightpink";
+  ctx8.arc(x,y,10,70,2*Math.PI,true)
+  ctx8.fill();
+  ctx8.closePath();
+ }
+ function clear() {
+  ctx8.clearRect(0, 0, width, height);
+ }
+ function run(){
+  clear()
+  ball();
+  if(x<0||x>width){
+   tx=-tx
+  }
+  if(y<0||y>height){
+   ty=-ty
+  }
+  x += tx;
+  y += ty;
+ }
+ function init(){
+  can8 = document.getElementById("canvas8");
+  ctx8 = can8.getContext("2d");
+  setInterval(run,20);
+ }
+ init();
+//---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

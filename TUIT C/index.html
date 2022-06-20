@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- EX-JS -->
+<script src="./main.js"></script>
+
+<!-- EX-CSS -->
+<link rel="stylesheet" type="text/css" href="./main.css" />
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+ <body>
+ <script>
+  (function(){
+   if(typeof(storage)!==undefined){
+    if(sessionStorage.count) sessionStorage.count=Number(sessionStorage.count)+1
+    else{sessionStorage.count=1}
+   }
+   else{
+   }
+  })();
+ </script>
+ <form onsubmit="return subhere();" name="login">
+  <label for="email">email</label>
+  <input name="name" type="text" class="blk" />
+  <p id="er-name" class="err"></p>
+  <label for="password">names</label>
+  <input name="pass" type="text" class="blk" />
+  <p id="er-pass" class="err"></p>
+  <button type="submit" class="blk" > login </button>
+ </form>
+ </body>
+</html>

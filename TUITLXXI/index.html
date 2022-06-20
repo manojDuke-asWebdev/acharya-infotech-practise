@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- JS -->
+
+<title> TUIT LXXI </title>
+
+<!-- CSS -->
+<link href="./assets/css/main.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body onload="handsOn()">
+
+<div class="container">
+<div class="input-output-wrapper">
+<div class="file-input">
+ <img 
+ --data-height="400"
+ --data-width="240"
+ height="400"
+ width="300"
+ class="output-image"
+ id="output-image" 
+ src="https://cdn.pixabay.com/photo/2018/07/23/18/59/barefoot-3557605_960_720.jpg" 
+ />
+ <input 
+ type="file" 
+ name="input-image" 
+ id="input-image" 
+ class="input-image"
+ onchange="update(event)" 
+ />
+ </div> 
+</div>
+<div id="root"></div>
+</div>
+<script src="./assets/js/index.js"> </script>
+</body>
+</html>
